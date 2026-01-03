@@ -1,0 +1,22 @@
+.arrow-svg {
+  overflow: visible;
+}
+
+.arrow-path {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+  stroke-width: 4;
+}
+
+.arrow-shooting-star {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.8));
+  animation: shootingStarPulse 2s ease-in-out infinite;
+}
+
+@keyframes shootingStarPulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
