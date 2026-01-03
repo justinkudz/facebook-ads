@@ -1,0 +1,123 @@
+.ad-grid-section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: #0A0A0A;
+}
+
+.ad-grid-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.ad-grid-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ad-grid-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.ad-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.ad-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-card {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInCard 0.8s ease-out;
+  animation-delay: calc(var(--index, 0) * 0.1s);
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ad-card-wrapper {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ad-card-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4), 0 8px 12px -2px rgba(0, 0, 0, 0.3);
+  border-color: #3a3a3a;
+}
+
+.ad-card-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.ad-card-title {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.ad-card-phone {
+  position: relative;
+  opacity: 1;
+  transform: scale(0.95);
+  animation: fadeInPhone 0.8s ease-out;
+  animation-delay: calc(var(--index, 0) * 0.1s + 0.2s);
+  animation-fill-mode: both;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+
+@keyframes fadeInPhone {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(0.95) translateY(0);
+  }
+}
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+  .ad-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ad-grid-section {
+    padding: 2rem 1rem;
+  }
+}
+

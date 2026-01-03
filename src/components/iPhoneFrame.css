@@ -1,8 +1,9 @@
 .iphone-frame {
   position: relative;
-  width: 300px;
-  height: 600px;
+  width: 240px;
+  height: 480px;
   margin: 0 auto;
+  flex-shrink: 0;
 }
 
 .iphone-frame-image {
@@ -18,11 +19,11 @@
 
 .iphone-screen {
   position: relative;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
-  margin: 8px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  margin: 6px;
   background: #ffffff;
-  border-radius: 26px;
+  border-radius: 24px;
   overflow: hidden;
   z-index: 0;
 }
@@ -30,14 +31,14 @@
 @media (max-width: 768px) {
   .iphone-frame {
     width: 100%;
-    max-width: 300px;
-    height: 600px;
+    max-width: 240px;
+    height: 480px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .iphone-frame {
-    width: 280px;
-    height: 560px;
+    width: 220px;
+    height: 440px;
   }
 }
