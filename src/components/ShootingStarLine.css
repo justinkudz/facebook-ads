@@ -2,7 +2,11 @@
   position: relative;
   height: 2px;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  width: 100%;
+  z-index: 0;
+  isolation: isolate;
+  contain: layout style paint;
 }
 
 .shooting-star-base {
@@ -10,26 +14,44 @@
   inset: 0;
   background: linear-gradient(to right, transparent, #6B5CE7, transparent);
   opacity: 0.3;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .shooting-star-main {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: -128px;
   width: 128px;
   height: 100%;
   background: linear-gradient(to right, transparent, #a78bfa, transparent);
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.6);
   filter: blur(1px);
+  animation: shooting-star-slide 2s linear infinite;
+  animation-delay: var(--delay, 0s);
 }
 
 .shooting-star-trail {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: -64px;
   width: 64px;
   height: 100%;
   background: linear-gradient(to right, transparent, #c4b5fd, transparent);
   opacity: 0.5;
   box-shadow: 0 0 15px rgba(196, 181, 253, 0.6);
   filter: blur(2px);
+  animation: shooting-star-slide 2s linear infinite;
+  animation-delay: var(--delay, 0.1s);
+}
+
+@keyframes shooting-star-slide {
+  0% {
+    left: -128px;
+  }
+  100% {
+    left: 100%;
+  }
 }
 

@@ -1,0 +1,113 @@
+.final-cta {
+  padding: 120px 2rem;
+  background: transparent;
+}
+
+.final-cta-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.final-cta-container .section-title {
+  margin-bottom: 1rem;
+}
+
+.final-cta-text {
+  max-width: 700px;
+  margin: 3rem auto 0;
+}
+
+.final-cta-subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.final-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--accent-purple);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.3), 0 0 20px rgba(107, 92, 231, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  font-family: inherit;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.final-cta-button::after {
+  content: '→';
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.final-cta.visible .final-cta-button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.final-cta-button:hover {
+  background: #5a4bc4;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 12px -2px rgba(107, 92, 231, 0.5), 0 0 30px rgba(107, 92, 231, 0.3);
+  transition: all 0.25s ease;
+}
+
+.final-cta-button:hover::after {
+  transform: translateX(4px);
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.3), 0 0 20px rgba(107, 92, 231, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.4), 0 0 25px rgba(107, 92, 231, 0.3);
+  }
+}
+
+.final-cta-contact {
+  margin-top: 2rem;
+}
+
+.final-cta-contact p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.final-cta-contact a {
+  color: var(--accent-purple);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.final-cta-contact a:hover {
+  color: #5a4bc4;
+}
+
+@media (max-width: 768px) {
+  .final-cta {
+    padding: 4rem 1.5rem;
+  }
+  
+  .final-cta-button {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+

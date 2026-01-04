@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 8rem 2rem 4rem;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
@@ -17,6 +17,46 @@
 
 .hero-content {
   max-width: 900px;
+  position: relative;
+}
+
+.hero-headshot {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.headshot-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  border: 4px solid var(--accent-purple);
+  box-shadow: 0 20px 40px -10px rgba(107, 92, 231, 0.5), 0 0 30px rgba(107, 92, 231, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+.headshot-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.headshot-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-tag {
@@ -45,8 +85,63 @@
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
   color: var(--text-secondary);
   line-height: 1.7;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.01em;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+}
+
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: var(--accent-purple);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.125rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.3), 0 0 20px rgba(107, 92, 231, 0.2);
+  font-family: inherit;
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+.hero-cta-button::after {
+  content: '→';
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  background: #5a4bc4;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 12px -2px rgba(107, 92, 231, 0.5), 0 0 30px rgba(107, 92, 231, 0.3);
+  transition: all 0.25s ease;
+}
+
+.hero-cta-button:hover::after {
+  transform: translateX(4px);
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.3), 0 0 20px rgba(107, 92, 231, 0.2);
+  }
+  50% {
+    box-shadow: 0 4px 6px -1px rgba(107, 92, 231, 0.4), 0 0 25px rgba(107, 92, 231, 0.3);
+  }
 }
 
 .scroll-indicator {

@@ -4,12 +4,12 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <h2 className="footer-headline">Want Ads Like These Running For Your Business?</h2>
-        <p className="footer-subtitle">
-          Get a free strategy call to see how many leads<br />
-          we could generate for your landscaping business.
-        </p>
-        <button className="footer-cta-button">Book Free Strategy Call</button>
+        <div className="footer-copyright">
+          © {new Date().getFullYear()} KUDZ Media
+        </div>
+        <div className="footer-contact">
+          <a href="mailto:justinkudzinskas5@gmail.com" className="footer-link">justinkudzinskas5@gmail.com</a>
+        </div>
       </div>
     </footer>
   )

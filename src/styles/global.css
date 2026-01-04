@@ -34,11 +34,18 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   font-size: 16px;
+  position: relative;
 }
 
 .app {
   min-height: 100vh;
   width: 100%;
+  position: relative;
+}
+
+.app > *:not(.grid-background):not(.animated-gradient-background):not(.booking-modal-overlay) {
+  position: relative;
+  z-index: 1;
 }
 
 /* Smooth scrolling */
@@ -73,6 +80,15 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   line-height: 1.7;
+}
+
+/* Section title consistency */
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 /* Utility classes */

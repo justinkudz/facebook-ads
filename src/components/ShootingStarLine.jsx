@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import './ShootingStarLine.css'
 
 function ShootingStarLine({ className = '', delay = 0 }) {
@@ -8,30 +7,18 @@ function ShootingStarLine({ className = '', delay = 0 }) {
       <div className="shooting-star-base"></div>
       
       {/* Shooting star effect */}
-      <motion.div
+      <div
         className="shooting-star-main"
-        initial={{ x: '-100%' }}
-        animate={{ x: '100%' }}
-        transition={{
-          duration: 1.5,
-          delay: delay,
-          ease: 'easeInOut',
-          repeat: Infinity,
-          repeatDelay: 2,
+        style={{
+          '--delay': `${delay}s`,
         }}
       />
       
       {/* Glow trail */}
-      <motion.div
+      <div
         className="shooting-star-trail"
-        initial={{ x: '-100%' }}
-        animate={{ x: '100%' }}
-        transition={{
-          duration: 1.5,
-          delay: delay + 0.1,
-          ease: 'easeInOut',
-          repeat: Infinity,
-          repeatDelay: 2,
+        style={{
+          '--delay': `${delay + 0.1}s`,
         }}
       />
     </div>

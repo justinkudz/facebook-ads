@@ -1,0 +1,108 @@
+.who-this-is-for {
+  padding: 120px 2rem;
+  background: transparent;
+}
+
+.who-this-is-for-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.who-this-is-for-container .section-title {
+  margin-bottom: 1rem;
+}
+
+.who-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.who-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.who-this-is-for.visible .who-section {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.who-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.who-checklist {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.who-checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: var(--delay, 0s);
+}
+
+.who-this-is-for.visible .who-checklist-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.who-checklist-item:last-child {
+  margin-bottom: 0;
+}
+
+.who-checklist-item .check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #10b981;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.who-checklist-item-negative .check-icon {
+  background: #ef4444;
+}
+
+.check-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .who-this-is-for {
+    padding: 4rem 1.5rem;
+  }
+  
+  .who-checklist {
+    padding: 2rem;
+  }
+  
+  .check-text {
+    font-size: 1rem;
+  }
+}
+

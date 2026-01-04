@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import AnimatedGradientText from './AnimatedGradientText'
 import './Hero.css'
 
-function Hero() {
+function Hero({ onOpenBooking }) {
   const heroRef = useRef(null)
 
   useEffect(() => {
@@ -15,20 +15,50 @@ function Hero() {
   return (
     <section className="hero" ref={heroRef}>
       <div className="hero-content">
-        <span className="hero-tag">Facebook Ad Templates</span>
         <h1 className="hero-title">
-          Ads That Actually <AnimatedGradientText>Convert</AnimatedGradientText><br />
-          For <AnimatedGradientText>Landscapers</AnimatedGradientText>
+          We Build The Bridge Between<br />
+          <AnimatedGradientText>Finding Customers and Closing Them</AnimatedGradientText>
         </h1>
+        
         <p className="hero-subtitle">
-          5 <AnimatedGradientText>proven ad formats</AnimatedGradientText> with the psychology <AnimatedGradientText>breakdown</AnimatedGradientText>.<br />
-          See exactly why each element works.
+          Most agencies generate leads and disappear. We build the complete system from first click to final sale.
         </p>
-        <div className="scroll-indicator">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M12 5v14M19 12l-7 7M5 12l7 7" />
-          </svg>
+        
+        <p className="hero-description">
+          Custom lead generation and sales systems for service businesses. No templates. Just results.
+        </p>
+        
+        {/* Headshot - centered below text */}
+        {/* TO REPLACE PHOTO: Change the src below to your image path (e.g., "/images/your-photo.jpg" or a full URL) */}
+        <div className="hero-headshot">
+          <div className="headshot-circle">
+            <img 
+              src="/headshot.jpg.png" 
+              alt="Justin" 
+              className="headshot-image" 
+              onError={(e) => { 
+                e.target.style.display = 'none'; 
+                if (e.target.nextSibling) {
+                  e.target.nextSibling.style.display = 'flex'; 
+                }
+              }} 
+            />
+            <div className="headshot-fallback" style={{ display: 'none' }}>JK</div>
+          </div>
         </div>
+        
+        <button 
+          onClick={(e) => {
+            e.preventDefault()
+            e.stopPropagation()
+            if (onOpenBooking) {
+              onOpenBooking()
+            }
+          }} 
+          className="hero-cta-button"
+        >
+          See If We&apos;re A Fit
+        </button>
       </div>
     </section>
   )

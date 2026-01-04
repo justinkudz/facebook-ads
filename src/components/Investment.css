@@ -1,0 +1,121 @@
+.investment {
+  padding: 120px 2rem;
+  background: transparent;
+}
+
+.investment-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.investment-container .section-title {
+  margin-bottom: 1rem;
+}
+
+.investment-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.investment-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.investment.visible .investment-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.investment-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.investment-text p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.investment-text p:last-child {
+  margin-bottom: 0;
+}
+
+.investment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+}
+
+.investment-list li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.investment-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
+.investment-stat-box {
+  margin-top: 3rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.2s;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.investment.visible .investment-stat-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.investment-stat-box .stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.investment-stat-box .stat-text {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .investment {
+    padding: 4rem 1.5rem;
+  }
+  
+  .investment-text p {
+    font-size: 1rem;
+  }
+  
+  .investment-list li {
+    font-size: 1rem;
+  }
+  
+  .investment-stat-box {
+    padding: 1.5rem;
+  }
+}
+
